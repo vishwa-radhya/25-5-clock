@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+}
+html{
+    font-size: 62.5%;
+}
+@mixin reuse-border{
+    border: 1px solid;
+}
+@mixin flex-cc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#root{
+    @include reuse-border;
+    height: 99.8vh;
+    @include flex-cc;
+}
+
+.clock-container{
+    @include reuse-border;
+    width: min(400px,92vw);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h3{
+        text-align: center;
+        font-size: 3rem;
+    }
+    .lengths-wrapper{
+        @include reuse-border;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .session-wrapper{
+        @include reuse-border;
+        @include flex-cc;
+        .sess{
+            @include reuse-border;
+            width: 70%;
+            text-align: center;
+
+
+        }
+    }
+    .controls-wrapper{
+        @include reuse-border;
+        @include flex-cc;
+
+        .ctrls{
+            @include reuse-border;
+            width: 30%;
+            @include flex-cc;
+        }
+    }
+}
+.break-container{
+    @include reuse-border;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+
+    label{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .brk-btn-wrapper{
+        @include reuse-border;
+        @include flex-cc;
+        font-size: 2.5rem;
+    }
+}
+
+.timer-label{
+    font-size: 3rem;
+}
+.time-left{
+    font-size: 6.5rem;
+}
+.start-stop{
+
+    i{
+        transition: .25s ease;
+    }
+}
+button{
+    outline: none;
+}
