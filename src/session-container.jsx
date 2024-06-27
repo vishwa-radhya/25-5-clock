@@ -89,7 +89,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
             <div></div>
             </div>
-            <audio src="https://www.peter-weinberg.com/files/1014/8073/6015/BeepSound.wav" id="beep" ref={audioRef}></audio>
+            <audio src="https://v-25clock.netlify.app/assets/beep.mp3" id="beep" ref={audioRef}></audio>
         </div>
 
     )
