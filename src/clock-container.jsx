@@ -35,7 +35,7 @@ const ClockContainer=()=>{
     return(
 
         <div className="clock-container">
-            <h3>25 + 5 Clock</h3>
+            <div className="h3-wrapper"><h3>25 + 5 Clock</h3></div>
             <div className="lengths-wrapper">
                 <BreakContainer label='Break Length' id='break-label' decBtnId='break-decrement' incBtnId='break-increment' lenId='break-length' len={breakLength} changeLength={handleBreakLengthChange} />
                 <BreakContainer label='Session Length' id='session-label' decBtnId='session-decrement' incBtnId='session-increment' lenId='session-length' len={sessionLength} changeLength={handleSessionLengthChange} />

@@ -1,8 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 *{
     margin: 0;
 }
 html{
     font-size: 62.5%;
+    font-family: "Black Ops One", system-ui;
 }
 @mixin reuse-border{
     border: 1px solid;
@@ -12,83 +17,157 @@ html{
     align-items: center;
     justify-content: center;
 }
-
+$pit-violet:rgba(57, 45, 189, 0.708);
+$pit-black:rgb(30, 30, 47);
 #root{
     @include reuse-border;
     height: 99.8vh;
     @include flex-cc;
+    background-color: black;
 }
 
 .clock-container{
     @include reuse-border;
+    border: 1px solid white;
     width: min(400px,92vw);
     height: 70vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 0, 0);
+    .h3-wrapper{
+        @include flex-cc;
+        background-color: $pit-violet;
+        margin-bottom: 1rem;
+        height: 13%;
+        border-radius: 0.5rem;
+    }
     h3{
         text-align: center;
-        font-size: 3rem;
+        font-size: 2.6rem;
+        background-color: $pit-black;
+        outline: 2px solid white;
+        color: ghostwhite;
+        width: 60%;
+        margin:5px auto;
+        border-radius: 0.5rem;
     }
     .lengths-wrapper{
-        @include reuse-border;
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        background-color: $pit-violet;
+        height: 30%;
+        border-radius: 0.5rem;
     }
     .session-wrapper{
-        @include reuse-border;
         @include flex-cc;
+        height: 40%;
+        
         .sess{
-            @include reuse-border;
-            width: 70%;
+            width: 100%;
+            height: 80%;
             text-align: center;
-
-
+            @include flex-cc;
+            flex-direction: column;
+            background-color: $pit-violet;
+            padding: 10px;
+            color: ghostwhite;
+            border-radius: 0.5rem;
         }
     }
     .controls-wrapper{
-        @include reuse-border;
         @include flex-cc;
-
+        height: 16%;
+        
         .ctrls{
             @include reuse-border;
-            width: 30%;
+            width: 100%;
             @include flex-cc;
+            gap: 2rem;
+            height: 100%;
+            border-radius: 0.5rem;
+            background-color: $pit-violet;
+            button{
+                height: 60%;
+                width: 20%;
+                background-color: $pit-black;
+                color: ghostwhite;
+                outline: 2px solid white;
+                border-radius: 0.5rem;
+            }
         }
     }
 }
 .break-container{
-    @include reuse-border;
-    width: 45%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-
+    background-color: $pit-black;
+    color: ghostwhite;
+    outline:  2px solid white;
+    border-radius: 0.5rem;
     label{
         text-align: center;
         font-size: 2.5rem;
     }
     .brk-btn-wrapper{
-        @include reuse-border;
         @include flex-cc;
         font-size: 2.5rem;
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        
+        button{
+            background-color: $pit-black;
+            color: ghostwhite;
+            border-radius: 0.5rem;
+            outline: 2px solid white;
+        }
     }
 }
 
 .timer-label{
     font-size: 3rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
 }
 .time-left{
-    font-size: 6.5rem;
+    @include reuse-border;
+    width: 80%;
+    font-size: 7.5rem;
+    background-color: $pit-black;
+    padding: 5px;
+    outline:3px solid white;
+    position: relative;
+    border-radius: 0.5rem;
+    div{
+        background-color: ghostwhite;
+        width: 80%;
+        height: 5%;
+        position: absolute;
+        bottom: -0.8rem;
+        left: 2.5rem;
+        border-radius: 0.5rem;
+    }
 }
 .start-stop{
 
-    i{
-        transition: .25s ease;
-    }
 }
 button{
     outline: none;
+    border: none;
+    transition: .2s ease;
+    &:hover,&:focus{
+        filter:invert(100%);
+    }
+}
+i{
+    font-size: 2rem;
+    transform: .25s ease;
+    &:active{
+        scale: 0.8;
+    }
 }

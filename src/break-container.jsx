@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const BreakContainer=({label,decBtnId,incBtnId,lenId,len,changeLength})=>{
+const BreakContainer=({label,decBtnId,incBtnId,lenId,len,changeLength,id})=>{
 
     function handleDecchange(){
         changeLength(-1);
@@ -13,7 +13,7 @@ const BreakContainer=({label,decBtnId,incBtnId,lenId,len,changeLength})=>{
     return(
 
         <div className="break-container">
-            <label htmlFor={label}>{label}</label>
+            <label htmlFor={label} id={id}>{label}</label>
             <div className="brk-btn-wrapper">
                 <button id={decBtnId} onClick={handleDecchange}><i className="fa-solid fa-chevron-down"></i></button>
                 <p id={lenId}>{len}</p>
@@ -31,6 +31,7 @@ BreakContainer.propTypes={
     lenId:PropTypes.string,
     len:PropTypes.number,
     changeLength:PropTypes.func,
+    id:PropTypes.string,
 }
 
 export default BreakContainer;

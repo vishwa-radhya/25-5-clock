@@ -83,6 +83,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
             {isSession ? 'Session' : 'Break'}
             </label>
             <div className="time-left">
+            <div></div>
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
             </div>
             <audio src="./../beep.mp3" ref={audioRef}></audio>
