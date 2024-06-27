@@ -28,7 +28,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
                             return prevTime;
                         }else{
                             minutes-=1;
-                            seconds=5;
+                            seconds=59;
                         }
                     }else{
                         seconds-=1;
@@ -72,6 +72,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
         if(resetFlag){
             setTime({minutes:sessionLength,seconds:0});
             setIsSession(true);
+            audioRef.current.pause();
             audioRef.current.currentTime=0;
         }
         handleResetFlag(false);
@@ -88,7 +89,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
             <div></div>
             </div>
-            <audio src="/public/assets/beep.mp3" id="beep" ref={audioRef}></audio>
+            <audio src="https://www.peter-weinberg.com/files/1014/8073/6015/BeepSound.wav" id="beep" ref={audioRef}></audio>
         </div>
 
     )
