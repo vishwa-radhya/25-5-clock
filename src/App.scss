@@ -29,7 +29,7 @@ $pit-black:rgb(30, 30, 47);
 .clock-container{
     @include reuse-border;
     border: 1px solid white;
-    width: min(400px,95vw);
+    width: min(400px,94vw);
     height: 70vh;
     display: flex;
     flex-direction: column;

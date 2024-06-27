@@ -72,7 +72,6 @@ const SessionContainer=({sessionLength,breakLength})=>{
         if(resetFlag){
             setTime({minutes:sessionLength,seconds:0});
             setIsSession(true);
-            audioRef.current.pause();
             audioRef.current.currentTime=0;
         }
         handleResetFlag(false);
@@ -89,7 +88,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
             <div></div>
             </div>
-            <audio src="./../beep.mp3" id="beep" ref={audioRef}></audio>
+            <audio src="/public/assets/beep.mp3" id="beep" ref={audioRef}></audio>
         </div>
 
     )
