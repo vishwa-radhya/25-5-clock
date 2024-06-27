@@ -21,8 +21,8 @@ const ControlsContainer=({resetBreak,resetSession})=>{
     return(
 
         <div className="ctrls">
-            <button className="start-stop" onClick={handlePausePlay}><i className={play ? 'fa-solid fa-pause':'fa-solid fa-play'}></i></button>
-            <button className="reset" onClick={handleResetClock}><i className="fa-solid fa-arrows-rotate"></i></button>
+            <button className="start-stop" id="start_stop" onClick={handlePausePlay}><i className={play ? 'fa-solid fa-pause':'fa-solid fa-play'}></i></button>
+            <button className="reset" id="reset" onClick={handleResetClock}><i className="fa-solid fa-arrows-rotate"></i></button>
         </div>
 
     )

@@ -29,7 +29,7 @@ $pit-black:rgb(30, 30, 47);
 .clock-container{
     @include reuse-border;
     border: 1px solid white;
-    width: min(400px,92vw);
+    width: min(400px,95vw);
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -146,15 +146,12 @@ $pit-black:rgb(30, 30, 47);
     div{
         background-color: ghostwhite;
         width: 80%;
-        height: 5%;
+        height: 4.5%;
         position: absolute;
-        bottom: -0.8rem;
-        left: 2.5rem;
-        border-radius: 0.5rem;
+        bottom: -0.65rem;
+        left: 2.8rem;
+        border-radius: 0.1rem;
     }
-}
-.start-stop{
-
 }
 button{
     outline: none;
@@ -169,5 +166,98 @@ i{
     transform: .25s ease;
     &:active{
         scale: 0.8;
+    }
+}
+@media screen and (max-width:345px){
+    .clock-container{
+        scale: 0.9;
+    }
+}
+@media screen and (max-width:330px){
+    h3{
+        font-weight: 100;
+        scale: 0.9;
+    }
+    .break-container{
+        scale: 0.9;
+
+        label{
+        font-weight: 100;
+        }
+        .brk-btn-wrapper{
+            font-size: 2.2rem;
+            gap: 0.8rem;
+            button{
+                scale: 0.9;
+            }
+        }
+    }
+    .timer-label{
+        font-size: 2.5rem;
+    }
+    .time-left{
+        scale: 0.9;
+        font-size: 6.5rem;
+        div{
+            width: 70%;
+            left: 3.5rem;
+            height: 4%;
+            bottom: -0.65rem;
+        }
+    }
+    .ctrls{
+        button{
+            scale: 0.9;
+        }
+    }
+    i{
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width:312px){
+    h3{
+        font-weight: 100;
+        scale: 0.7;
+    }
+}
+@media screen and (max-width:301px){
+    h3{
+        font-weight: 100;
+        scale: 0.65;
+    }
+    .break-container{
+        scale: 0.8;
+
+        label{
+        font-weight: 100;
+        }
+        .brk-btn-wrapper{
+            font-size: 2rem;
+            gap: 0.6rem;
+            button{
+                scale: 0.8;
+            }
+        }
+    }
+    .timer-label{
+        font-size: 2.1rem;
+    }
+    .time-left{
+        scale: 0.8;
+        font-size: 6.1rem;
+        div{
+            width: 65%;
+            left: 3.5rem;
+            height: 3%;
+            bottom: -0.62rem;
+        }
+    }
+    .ctrls{
+        button{
+            scale: 0.8;
+        }
+    }
+    i{
+        font-size: 2rem;
     }
 }

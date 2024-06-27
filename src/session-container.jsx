@@ -71,6 +71,9 @@ const SessionContainer=({sessionLength,breakLength})=>{
 
         if(resetFlag){
             setTime({minutes:sessionLength,seconds:0});
+            setIsSession(true);
+            audioRef.current.pause();
+            audioRef.current.currentTime=0;
         }
         handleResetFlag(false);
 
@@ -82,11 +85,11 @@ const SessionContainer=({sessionLength,breakLength})=>{
             <label htmlFor="" id="timer-label" className="timer-label">
             {isSession ? 'Session' : 'Break'}
             </label>
-            <div className="time-left">
-            <div></div>
+            <div className="time-left" id="time-left">
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
+            <div></div>
             </div>
-            <audio src="./../beep.mp3" ref={audioRef}></audio>
+            <audio src="./../beep.mp3" id="beep" ref={audioRef}></audio>
         </div>
 
     )
