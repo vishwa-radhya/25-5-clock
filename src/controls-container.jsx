@@ -12,7 +12,7 @@ const ControlsContainer=({resetBreak,resetSession})=>{
 
     function handleResetClock(){
         resetBreak(5);
-        resetSession(25);
+        resetSession(5);
         handleSetPlay(false);
         handleSetFlag(false);
         handleResetFlag(true);

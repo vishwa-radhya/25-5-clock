@@ -28,7 +28,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
                             return prevTime;
                         }else{
                             minutes-=1;
-                            seconds=59;
+                            seconds=5;
                         }
                     }else{
                         seconds-=1;
