@@ -125,6 +125,7 @@ $pit-black:rgb(30, 30, 47);
             color: ghostwhite;
             border-radius: 0.5rem;
             outline: 2px solid white;
+            @include flex-cc;
         }
     }
 }
@@ -259,5 +260,88 @@ i{
     }
     i{
         font-size: 2rem;
+    }
+}
+@media screen and (max-height:600px){
+    h3{
+        font-weight: 100;
+        scale: 0.8;
+    }
+    .break-container{
+        scale: 0.8;
+
+        label{
+        font-weight: 100;
+        }
+        .brk-btn-wrapper{
+            font-size: 2rem;
+            gap: 0.7rem;
+            button{
+                scale: 0.8;
+            }
+        }
+    }
+    .timer-label{
+        font-size: 2.1rem;
+    }
+    .time-left{
+        scale: 0.8;
+        font-size: 6.1rem;
+        div{
+            width: 70%;
+            left: 3.5rem;
+            height: 4%;
+            bottom: -0.65rem;
+        }
+    }
+    .ctrls{
+        button{
+            scale: 0.8;
+        }
+    }
+    i{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-height:530px){
+    h3{
+        font-weight: 100;
+        scale: 0.65;
+    }
+    .break-container{
+        scale: 0.7;
+
+        label{
+        font-weight: 100;
+        }
+        .brk-btn-wrapper{
+            font-size: 1.7rem;
+            gap: 0.6rem;
+            button{
+                scale: 0.8;
+            }
+        }
+    }
+    .timer-label{
+        margin-top: 3px;
+        font-size: 1.8rem;
+    }
+    .time-left{
+        scale: 0.7;
+        font-size: 5.8rem;
+        div{
+            width: 70%;
+            left: 3.5rem;
+            height: 4%;
+            bottom: -0.65rem;
+        }
+    }
+    .ctrls{
+        button{
+            scale: 0.7;
+        }
+    }
+    i{
+        font-size: 1.8rem;
     }
 }
