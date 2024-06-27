@@ -6,7 +6,7 @@ import ControlsContainer from "./controls-container";
 const ClockContainer=()=>{
 
     const [breakLength,setBreakLength]=useState(5);
-    const [sessionLength,setSessionLength]=useState(25);
+    const [sessionLength,setSessionLength]=useState(5);
 
     function handleBreakLengthChange(newLen){
         
