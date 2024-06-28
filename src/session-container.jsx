@@ -1,9 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { PlayerContext } from "./player-context";
 import PropTypes from 'prop-types';
+import SelectAudioContainer from "./select-audio-container";
+import { AudioSelectContext } from "./audio-select-context";
 
 const SessionContainer=({sessionLength,breakLength})=>{
 
+    const {handleSelectOpen,isAudioSelectOpen}=useContext(AudioSelectContext);
     const [time,setTime]=useState({minutes:sessionLength,seconds:0});
     const [isSession,setIsSession]=useState(true);
     const {play,handleSetFlag,flag,resetFlag,handleResetFlag}=useContext(PlayerContext);
@@ -79,9 +82,17 @@ const SessionContainer=({sessionLength,breakLength})=>{
 
     },[resetFlag,handleResetFlag,sessionLength]);
 
+    function toggleAudioContainer(){
+        handleSelectOpen();
+    }
+
     return(
 
         <div className="sess">
+        <button className="expand-btn" onClick={toggleAudioContainer}><i className={
+            isAudioSelectOpen ? 'fa-solid fa-chevron-right' : 'fa-solid fa-chevron-left'
+        }></i></button>
+        <SelectAudioContainer/>
             <label htmlFor="" id="timer-label" className="timer-label">
             {isSession ? 'Session' : 'Break'}
             </label>
