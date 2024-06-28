@@ -196,7 +196,7 @@ i{
     right: 0;
     z-index: 3;
     background-color: rgb(35, 35, 51);
-    transition: .45s ease;
+    transition: .4s ease;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: -1.6px 0px 3px rgb(80, 80, 80);
@@ -256,12 +256,14 @@ i{
     .slider{
         position: absolute;
         cursor: pointer;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
         background:linear-gradient(180deg,#0002,#fff0);
-        transition: .3s ease;
+        transition: .25s ease;
         border-radius: 1rem;
         &::before{
             position: absolute;
@@ -269,7 +271,7 @@ i{
             height: 85%;
             width: 35%;
             top: 1.3px;
-            transition: .3s ease;
+            transition: .25s ease;
             left: 1px;
             background:radial-gradient(rgb(169, 191, 218) 60%,#becfcd 70%);
             box-shadow: 1px 1px 5px rgb(252, 21, 21),-1px -1px 5px 0.5px black;
@@ -282,7 +284,7 @@ i{
     input:checked + .slider:before{
         transform: translateX(175%);
     }
-    
+
 }
 
 @media screen and (max-width:345px){
