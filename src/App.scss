@@ -196,7 +196,7 @@ i{
     right: 0;
     z-index: 3;
     background-color: rgb(35, 35, 51);
-    transition: .4s ease-in-out;
+    transition: .4s linear;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: -1.6px 0px 3px rgb(80, 80, 80);
@@ -230,13 +230,15 @@ i{
     }
 }
 .light{
-    border: 2px solid white;
+    outline: 1px solid white;
+    border: 0.4px solid black;
     width: 5%;
     height: 45%;
     border-radius: 50%;
     margin-left: -5%;
-    box-shadow: 1px 2.1px 3px black,inset 1px 1px 5px rgb(76, 77, 76);
+    box-shadow: 1px 2.1px 3px black,inset 1px 1px 5px rgb(76, 77, 76),inset -1px -1px 1px black;
     position: relative;
+    filter: brightness(150%);
 }
 
 .power-div{

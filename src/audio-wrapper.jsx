@@ -19,7 +19,8 @@ const AudioWrapper=({name,audioSrc})=>{
     }
     
     const lightStyles={
-        backgroundColor:'red',
+        backgroundColor:'#FE0B0E',
+        boxShadow:" 0.5px 0.5px 3px rgb(190, 20, 20),-0.5px -0.5px 3px rgb(190, 20, 20),inset 1px 1px 5px rgb(76, 77, 76),inset -1px -1px 1px black",
     }
 
     return(
