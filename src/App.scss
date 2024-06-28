@@ -188,24 +188,20 @@ i{
 
 .select-audio-container{
     position: absolute;
-    @include reuse-border;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    // outline: 1px solid white;
-    // width: 90%;
     height: 100%;
     top: 0;
     right: 0;
     z-index: 3;
-    background-color: $pit-violet;
+    background-color: rgb(35, 35, 51);
     transition: .45s ease;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: -1.6px 0px 3px rgb(80, 80, 80);
 
     .select-audio-div{
-        @include reuse-border;
-        background-color: $pit-black;
         height: 86%;
         width: 99%;
         display: flex;
@@ -214,19 +210,32 @@ i{
         align-items: center;
 
         .audio-wrapper{
-            @include reuse-border;
             display: flex;
             align-items: center;
             justify-content: space-around;
             width: 50%;
-            div{
-                @include reuse-border;
-                // height: 70%;
-                // width: 6.5%;
-                // border-radius: 50%;
+
+            button{
+                @include flex-cc;
+                outline: 2px solid black;
+                box-shadow: 2.5px 2.5px 2px white;
+            }
+
+            p{
+                font-size: 1.2rem;
+                text-shadow: 2px 2px 2px black;
             }
         }
     }
+}
+.light{
+    border: 2px solid white;
+    width: 5%;
+    height: 45%;
+    border-radius: 50%;
+    margin-left: -5%;
+    box-shadow: 1px 2.1px 3px black,inset 1px 1px 5px rgb(76, 77, 76);
+    position: relative;
 }
 
 .power-div{
@@ -234,12 +243,15 @@ i{
     display: inline-block;
     width: 25%;
     height: 80%;
+    border-radius: 1rem;
+    box-shadow: 0px -3px 3px  rgb(30, 27, 27),0.8px 0.8px 2px rgb(207, 197, 197),-1px 0px 1px rgb(207, 197, 197),inset -1px -1px 0.4px rgb(0, 0, 0);
 
     input{
         opacity: 0;
         width: 0;
         height: 0;
         outline: none;
+        
     }
     .slider{
         position: absolute;
@@ -248,31 +260,56 @@ i{
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: #312f2f;
-        transition: .4s ease;
-
+        background:linear-gradient(180deg,#0002,#fff0);
+        transition: .3s ease;
+        border-radius: 1rem;
         &::before{
             position: absolute;
             content: '';
             height: 85%;
-            width: 45%;
-            top: 1.25px;
-            transition: .4s ease;
-            left: 2.3px;
-            background-color: #ccc;
+            width: 35%;
+            top: 1.3px;
+            transition: .3s ease;
+            left: 1px;
+            background:radial-gradient(rgb(169, 191, 218) 60%,#becfcd 70%);
+            box-shadow: 1px 1px 5px rgb(252, 21, 21),-1px -1px 5px 0.5px black;
+            border-radius: 50%;
         }
     }
     input:checked + .slider{
-        background-color: #2196f3;
+        background-color: linear-gradient(180deg,#0002,#fff0);;
     }
     input:checked + .slider:before{
-        transform: translateX(100%);
+        transform: translateX(175%);
     }
+    
 }
 
 @media screen and (max-width:345px){
     .clock-container{
         scale: 0.9;
+    }
+    .audio-wrapper{
+        height: 16%;
+        width: 60%;
+        gap: 9%;
+    }
+    .light{
+        height: 35%;
+    }
+    .power-div{
+        .slider{
+            input{
+                outline: none;
+            }
+            &::before{
+                top: 15%;
+                height: 75%;
+            }
+        }
+        input:checked +.slider{
+            transform: translateX(-3%);
+        }
     }
 }
 @media screen and (max-width:330px){
@@ -315,11 +352,32 @@ i{
     i{
         font-size: 1.7rem;
     }
+    .audio-wrapper{
+        .light{
+            height: 35%;
+        }
+        .slider{
+            &::before{
+                height: 70%;
+            }
+        }
+    }
 }
 @media screen and (max-width:312px){
     h3{
         font-weight: 100;
         scale: 0.7;
+    }
+    .audio-wrapper{
+        .light{
+            height: 30%;
+        }
+        .slider{
+            &::before{
+                height: 68%;
+                top: 20%;
+            }
+        }
     }
 }
 @media screen and (max-width:301px){
@@ -361,6 +419,17 @@ i{
     }
     i{
         font-size: 2rem;
+    }
+    .audio-wrapper{
+        .light{
+            height: 28%;
+        }
+        .slider{
+            &::before{
+                height: 60%;
+                top: 25%;
+            }
+        }
     }
 }
 @media screen and (max-height:600px){

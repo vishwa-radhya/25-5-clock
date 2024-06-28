@@ -10,6 +10,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
     const [time,setTime]=useState({minutes:sessionLength,seconds:0});
     const [isSession,setIsSession]=useState(true);
     const {play,handleSetFlag,flag,resetFlag,handleResetFlag}=useContext(PlayerContext);
+    const {selectedAudio}=useContext(AudioSelectContext);
     const intervalIdRef = useRef(null);
     const audioRef =  useRef(null);
 
@@ -31,7 +32,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
                             return prevTime;
                         }else{
                             minutes-=1;
-                            seconds=59;
+                            seconds=5;
                         }
                     }else{
                         seconds-=1;
@@ -86,6 +87,13 @@ const SessionContainer=({sessionLength,breakLength})=>{
         handleSelectOpen();
     }
 
+    const beepArray={
+        'Beep-0':'https://v-25clock.netlify.app/assets/beep.mp3',
+        'Beep-1':'https://v-25clock.netlify.app/assets/beep-1.mp3',
+        'Beep-2':'https://v-25clock.netlify.app/assets/beep-2.mp3',
+        'Beep-3':'https://v-25clock.netlify.app/assets/beep-3.mp3',
+    }
+
     return(
 
         <div className="sess">
@@ -100,7 +108,7 @@ const SessionContainer=({sessionLength,breakLength})=>{
             {String(time.minutes).padStart(2,'0')}:{String(time.seconds).padStart(2,'0')}
             <div></div>
             </div>
-            <audio src="https://v-25clock.netlify.app/assets/beep.mp3" id="beep" ref={audioRef}></audio>
+            <audio src={beepArray[selectedAudio]} id="beep" ref={audioRef}></audio>
         </div>
 
     )
