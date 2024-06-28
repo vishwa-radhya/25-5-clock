@@ -8,7 +8,6 @@ const SelectAudioContainer=()=>{
 
     const expandStyles={
         width:isAudioSelectOpen ? '95%' : '0%',
-        // border:isAudioSelectOpen ? '1px solid white' :'0',
     }
 
     return(
