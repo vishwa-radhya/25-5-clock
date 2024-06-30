@@ -12,7 +12,7 @@ const SelectAudioContainer=()=>{
 
     return(
         <div className="select-audio-container" style={expandStyles}>
-            <SelectAudio/>
+            {isAudioSelectOpen && <SelectAudio/>}
         </div>
     )
 }
